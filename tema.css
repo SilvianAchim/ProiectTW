@@ -1,0 +1,149 @@
+/* CSS code */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1.6vh; 
+    color: #333;
+    background: #f0f0f0;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 2vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1vh; 
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    background: #555;
+}
+
+nav ul li ul {
+    display: none;
+    position: static;
+    top: 100%;
+    left: 0;
+    background: #333;
+    padding: 2vh;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    margin: 2vh 0; 
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2vh;
+    padding: 2vh;
+}
+
+.articol {
+    background: white;
+    padding: 2vh;
+    border-radius: 1vh; 
+}
+
+.articol h2 {
+    color: gray;
+}
+
+.articol p {
+    color: grey;
+}
+
+.articol img {
+    width: auto;
+    height: 40vh;
+}
+
+.cumpara-button {
+    display: block;
+    margin-top: 2vh; 
+    padding: 2vh 4vh;
+    border: none;
+    border-radius: 0.5vh;
+    cursor: pointer;
+
+    transition-duration: 1s, 2s, 3s; 
+    transition-delay: 0s, 1s, 2s; 
+     
+    animation-name: cumpara-acum-animation; 
+    animation-duration: 4s; 
+    animation-iteration-count: infinite; 
+    animation-direction: alternate; 
+    animation-timing-function: linear;
+}
+
+@keyframes cumpara-acum-animation {
+    from {
+        transform : scale(1);
+        background : gray; 
+        color : white; 
+    }
+    to {
+        transform : scale(1.1);
+        background : black; 
+        color : red; 
+    }
+}
+
+@media screen and (max-width : 700px) {
+    main {
+        grid-template-columns : repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width : 500px) {
+    main {
+         grid-template-columns : repeat(1,1fr);
+    }      
+}
+
+.articol::before {
+    content : "Super pret";
+    display : block; 
+    font-weight : bold; 
+    color : #333; 
+}
+
+.articol::after {
+    content : "*Livrare gratuita*";
+    display : block; 
+    font-style : italic;
+    font-weight : bold; 
+    color : #777; 
+}
+
+.articol:nth-of-type(-n + 3):before{
+    content : "Reducere 50%";
+    color :red; 
+}
