@@ -24,7 +24,7 @@ function selectProduct() {
 
 function submitReview(reviewProduct) {
   let form = document.getElementById("review-form");
-  form.style.display = "block";
+  form.style.display = "flex";
 
   console.log(reviewProduct);
 }
