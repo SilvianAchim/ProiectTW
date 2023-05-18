@@ -1,5 +1,6 @@
 window.onload = function () {
   selectProduct();
+  listenForKeypress();
 };
 
 function selectProduct() {
@@ -37,4 +38,14 @@ function checkReview() {
   }
 }
 
-
+function listenForKeypress() {
+  document.addEventListener(
+    "keyup",
+    (event) => {
+      if (event.code === "Digit1") {
+        location.href = "../main.html";
+      }
+    },
+    false
+  );
+}

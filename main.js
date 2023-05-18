@@ -1,6 +1,7 @@
 window.onload = function () {
   addArticleButtons();
   randomChangeBackgroundColor();
+  listenForKeypress();
 };
 
 function addArticleButtons() {
@@ -37,23 +38,102 @@ function buyNow() {
   alert("Produsul a fost cumparat!");
 }
 
-function randomChangeBackgroundColor(){
+function randomChangeBackgroundColor() {
   const colors = [
-    "#56CCF2", // Light Blue
-    "#2F80ED", // Azure
-    "#9B51E0", // Violet
-    "#BB6BD9", // Light Violet
-    "#6FCF97", // Light Green
-    "#27AE60", // Dark Green
-    "#F2994A", // Yellow Orange
-    "#EB5757", // Red
-    "#F2C94C", // Yellow
-    "#333333", // Dark Grey
-    "#828282", // Grey
-    "#BDBDBD", // Light Grey
-    "#F7F2E8", // Cream
+    "#FF5733",
+    "#FF8D1A",
+    "#E4FF1A",
+    "#1AFFD5",
+    "#1A9EFF",
+    "#571AFF",
+    "#D61AFF",
+    "#FF1A75",
+    "#FF5733",
+    "#FF8D1A",
+    "#E4FF1A",
+    "#1AFFD5",
+    "#1A9EFF",
+    "#571AFF",
+    "#D61AFF",
+    "#FF1A75",
+    "#FF5733",
+    "#FF8D1A",
+    "#E4FF1A",
+    "#1AFFD5",
+    "#1A9EFF",
+    "#571AFF",
+    "#D61AFF",
+    "#FF1A75",
+    "#FF5733",
+    "#FF8D1A",
+    "#E4FF1A",
+    "#1AFFD5",
+    "#1A9EFF",
+    "#571AFF",
   ];
-  
+
   let randomColor = colors[Math.floor(Math.random() * colors.length)];
-  document.getElementsByTagName('header')[0].style.background = randomColor;
+  document.getElementsByTagName("header")[0].style.background = randomColor;
+}
+
+function listenForKeypress() {
+  document.addEventListener(
+    "keyup",
+    (event) => {
+      if (event.code === "Digit1") {
+        location.href = "ReviewComponent/review.html";
+      }
+    },
+    false
+  );
+}
+
+setTimeout(function () {
+  alert("Welcome to Amazon!");
+  changeBackground();
+}, 2000);
+
+function changeBackground() {
+  const colors = [
+    "#FFB3B3",
+    "#FFCC99",
+    "#FFFF99",
+    "#CCFFCC",
+    "#CCFFFF",
+    "#99CCFF",
+    "#CC99FF",
+    "#FFFFFF",
+    "#FFCCCC",
+    "#FFCC99",
+    "#FFFFCC",
+    "#CCFFCC",
+    "#CCFFCC",
+    "#99CCFF",
+    "#CC99FF",
+    "#FFCCCC",
+    "#FFCC99",
+    "#FFFFCC",
+    "#CCFFCC",
+    "#CCFFFF",
+    "#99CCFF",
+    "#CC99FF",
+    "#FFCCCC",
+    "#FFCC99",
+    "#FFFFCC",
+    "#CCFFCC",
+    "#CCFFFF",
+    "#99CCFF",
+    "#CC99FF",
+    "#FFCCCC",
+  ];
+
+  let i = 0;
+
+  setInterval(function () {
+    document.body.style.backgroundColor = colors[i];
+    i++;
+    if (i == colors.length) {
+      i = 0;
+    }
+  }, 2000);
 }

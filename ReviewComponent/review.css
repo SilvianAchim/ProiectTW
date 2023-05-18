@@ -16,7 +16,7 @@ body {
   gap: 10px;
 }
 
-#review-form{
+#review-form {
   width: 100%;
   max-width: 500px;
   margin-bottom: 30px;
@@ -30,7 +30,8 @@ label {
   font-weight: bold;
 }
 
-input, select {
+input,
+select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -52,10 +53,13 @@ input, select {
 }
 
 @media (max-width: 600px) {
-  #review-form, .dropdown-container {
+  #review-form,
+  .dropdown-container {
     width: 100%;
   }
-  input, select, .submit-button {
+  input,
+  select,
+  .submit-button {
     width: 100%;
   }
 }
