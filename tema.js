@@ -14,20 +14,23 @@ function addArticleButtons() {
 }
 
 function buyNow() {
-  let boughtElement =
-    this.parentElement.getElementsByTagName("h2")[0].textContent;
-
-  console.log(boughtElement);
-
   let boughtElements = JSON.parse(localStorage.getItem("cart"));
-
   if (boughtElements == null) boughtElements = [];
-  console.log(boughtElements);
 
-  boughtElements.push(boughtElement);
-
-  console.log(boughtElements);
-
+  const boughtElementTitle =
+    this.parentElement.getElementsByTagName("h2")[0].textContent;
+  let boughtElement = boughtElements.find(
+    (be) => be.item === boughtElementTitle
+  );
+  if (boughtElement) {
+    boughtElement.quantity++;
+  } else {
+    boughtElement = {
+      item: boughtElementTitle,
+      quantity: 1,
+    };
+    boughtElements.push(boughtElement);
+  }
   localStorage.setItem("cart", JSON.stringify(boughtElements));
 
   alert("Produsul a fost cumparat!");

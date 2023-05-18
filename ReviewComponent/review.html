@@ -3,13 +3,16 @@
     <meta charset="utf-8">
     <title>Amazon</title>
     <script src="review.js"></script>
+    <link rel="stylesheet" href="review.css">
 </head>
 <body>
-<form id="review-form">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" pattern="^[a-zA-Z]+$" title="Please enter alphabetic characters only" required>
-  <button type="submit" onclick="submitReview()">Submit</button>
-</form>
-      
+    <label for="bought-products-dropdown">Select an item you want to write a review:</label>
+    <select id="bought-products-dropdown" name="bought-products-dropdown"></select>
+    
+    <form id="review-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" pattern="^[a-zA-Z]+$" title="Please enter alphabetic characters only" required>
+    <button type="submit" onclick="checkReview()">Submit</button>
+    </form>
 </body>
 </html>
