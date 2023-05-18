@@ -1,5 +1,4 @@
 window.onload = function () {
-  console.log("onload2");
   selectProduct();
 };
 
@@ -34,6 +33,6 @@ function checkReview() {
   let form = document.getElementById("review-form");
   if (form.checkValidity()) {
     form.reset();
-    location.href = "../tema.html";
+    location.href = "../main.html";
   }
 }
