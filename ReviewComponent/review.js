@@ -36,3 +36,5 @@ function checkReview() {
     location.href = "../main.html";
   }
 }
+
+
