@@ -93,47 +93,60 @@ setTimeout(function () {
   changeBackground();
 }, 2000);
 
-function changeBackground() {
-  const colors = [
-    "#FFB3B3",
-    "#FFCC99",
-    "#FFFF99",
-    "#CCFFCC",
-    "#CCFFFF",
-    "#99CCFF",
-    "#CC99FF",
-    "#FFFFFF",
-    "#FFCCCC",
-    "#FFCC99",
-    "#FFFFCC",
-    "#CCFFCC",
-    "#CCFFCC",
-    "#99CCFF",
-    "#CC99FF",
-    "#FFCCCC",
-    "#FFCC99",
-    "#FFFFCC",
-    "#CCFFCC",
-    "#CCFFFF",
-    "#99CCFF",
-    "#CC99FF",
-    "#FFCCCC",
-    "#FFCC99",
-    "#FFFFCC",
-    "#CCFFCC",
-    "#CCFFFF",
-    "#99CCFF",
-    "#CC99FF",
-    "#FFCCCC",
-  ];
+const colors = [
+  {
+    value: "rgb(255, 179, 179)",
+    name: "Light red",
+  },
+  {
+    value: "rgb(255, 204, 153)",
+    name: "Light orange",
+  },
+  {
+    value: "rgb(255, 255, 153)",
+    name: "Light yellow",
+  },
+  {
+    value: "rgb(204, 255, 204)",
+    name: "Light green",
+  },
+  {
+    value: "rgb(204, 255, 255)",
+    name: "Light cyan",
+  },
+  {
+    value: "rgb(153, 204, 255)",
+    name: "Light blue",
+  },
+  {
+    value: "rgb(204, 153, 255)",
+    name: "Light violet",
+  },
+  {
+    value: "rgb(255, 204, 204)",
+    name: "Light pink",
+  },
+];
 
+function changeBackground() {
   let i = 0;
 
   setInterval(function () {
-    document.body.style.backgroundColor = colors[i];
+    document.body.style.backgroundColor = colors[i].value;
     i++;
     if (i == colors.length) {
       i = 0;
     }
+
+    printBackgroudColor();
   }, 2000);
+}
+
+function printBackgroudColor() {
+  const backgroundColor = window.getComputedStyle(
+    document.body
+  ).backgroundColor;
+  document.getElementById("background-color-text").textContent = colors.find(
+    (c) => c.value === backgroundColor
+  ).name;
 }
