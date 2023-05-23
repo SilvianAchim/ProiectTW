@@ -51,15 +51,3 @@ select {
 .submit-button:hover {
   background-color: #45a049;
 }
-
-@media (max-width: 600px) {
-  #review-form,
-  .dropdown-container {
-    width: 100%;
-  }
-  input,
-  select,
-  .submit-button {
-    width: 100%;
-  }
-}

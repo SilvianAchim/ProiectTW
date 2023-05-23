@@ -2,6 +2,7 @@ window.onload = function () {
   addArticleButtons();
   randomChangeBackgroundColor();
   listenForKeypress();
+  stopPropagationForArticle();
 };
 
 function addArticleButtons() {
@@ -149,4 +150,22 @@ function printBackgroudColor() {
   document.getElementById("background-color-text").textContent = colors.find(
     (c) => c.value === backgroundColor
   ).name;
+}
+
+function stopPropagationForArticle() {
+  Array.from(document.getElementsByClassName("articol")).forEach((article) => {
+    article.addEventListener("click", function (e) {
+      e.target.style.backgroundColor = "red";
+      console.log("Parent Clicked");
+    });
+  });
+
+  const childElements = document.querySelectorAll(".articol h2");
+  childElements.forEach((child) => {
+    child.addEventListener("click", function (e) {
+      e.stopPropagation();
+      e.target.style.backgroundColor = "lightgray";
+      console.log("Child Clicked");
+    });
+  });
 }
