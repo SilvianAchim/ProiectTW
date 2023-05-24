@@ -23,15 +23,33 @@
         title="Please enter alphabetic characters only"
         required
       />
-      <label for="age">Age:</label>
+      <label for="product">Product Name:</label>
       <input
-        type="number"
-        id="age"
-        name="age"
-        min="0"
-        title="Please enter numeric characters only"
+        type="text"
+        id="product"
+        name="product"
+        title="Please enter the product name"
         required
       />
+      <label for="rating">Rating:</label>
+      <input
+        type="number"
+        id="rating"
+        name="rating"
+        min="1"
+        max="5"
+        title="Rate the product on a scale from 1 to 5"
+        required
+      />
+      <label for="review">Review:</label>
+      <textarea
+        id="review"
+        name="review"
+        rows="5"
+        cols="50"
+        title="Enter your review here"
+        required
+      ></textarea>
       <button class="submit-button" type="submit" onclick="checkReview()">
         Submit
       </button>

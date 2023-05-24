@@ -81,7 +81,7 @@ function listenForKeypress() {
   document.addEventListener(
     "keyup",
     (event) => {
-      if (event.code === "Digit1") {
+      if (event.code === "F2") {
         location.href = "ReviewComponent/review.html";
       }
     },
