@@ -7,52 +7,59 @@
     <link rel="stylesheet" href="review.css" />
   </head>
   <body>
-    <div class="dropdown-container">
-      <label for="bought-products-dropdown"
-        >Select an item you want to write a review:</label
-      >
-      <select id="bought-products-dropdown"></select>
+    <div class="container">
+      <h2>Write a Product Review</h2>
+      <div class="dropdown-container">
+        <label for="bought-products-dropdown"
+          >Select an item you want to write a review:</label
+        >
+        <select id="bought-products-dropdown"></select>
+      </div>
+      <form id="review-form">
+        <label for="name">Full Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          pattern="^[a-zA-Z\s]+$"
+          title="Please enter alphabetic characters only"
+          required
+        />
+
+        <label for="product">Product Name:</label>
+        <input
+          type="text"
+          id="product"
+          name="product"
+          title="Please enter the product name"
+          required
+        />
+
+        <label for="rating">Rating:</label>
+        <input
+          type="number"
+          id="rating"
+          name="rating"
+          min="1"
+          max="5"
+          title="Rate the product on a scale from 1 to 5"
+          required
+        />
+
+        <label for="review">Review:</label>
+        <textarea
+          id="review"
+          name="review"
+          rows="5"
+          cols="50"
+          title="Enter your review here"
+          required
+        ></textarea>
+
+        <button class="submit-button" type="submit" onclick="checkReview()">
+          Submit
+        </button>
+      </form>
     </div>
-    <form id="review-form">
-      <label for="name">Full Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        pattern="^[a-zA-Z\s]+$"
-        title="Please enter alphabetic characters only"
-        required
-      />
-      <label for="product">Product Name:</label>
-      <input
-        type="text"
-        id="product"
-        name="product"
-        title="Please enter the product name"
-        required
-      />
-      <label for="rating">Rating:</label>
-      <input
-        type="number"
-        id="rating"
-        name="rating"
-        min="1"
-        max="5"
-        title="Rate the product on a scale from 1 to 5"
-        required
-      />
-      <label for="review">Review:</label>
-      <textarea
-        id="review"
-        name="review"
-        rows="5"
-        cols="50"
-        title="Enter your review here"
-        required
-      ></textarea>
-      <button class="submit-button" type="submit" onclick="checkReview()">
-        Submit
-      </button>
-    </form>
   </body>
 </html>
