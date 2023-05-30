@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  padding: 20px;
+  padding: 5%;
   box-sizing: border-box;
 }
 
@@ -9,7 +9,7 @@ body {
   width: 100%;
   max-width: 500px;
   background-color: #fff;
-  padding: 20px;
+  padding: 2%;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   margin: 0 auto;
@@ -65,4 +65,15 @@ textarea {
 
 .submit-button:hover {
   background-color: #45a049;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    max-width: 70vw;
+  }
+
+  nav,
+  nav ul {
+    display: inline;
+  }
 }

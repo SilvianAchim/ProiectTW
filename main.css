@@ -113,15 +113,19 @@ main {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
   main {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 100vw);
+    display: inline;
   }
-}
 
-@media screen and (max-width: 500px) {
-  main {
-    grid-template-columns: repeat(1, 1fr);
+  img {
+    max-width: 90vw;
+  }
+
+  nav,
+  nav ul {
+    display: inline;
   }
 }
 
